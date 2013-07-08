@@ -1,0 +1,29 @@
+results_explain: <%= node['oculus']['results_explain'] ? 1 : 0 %>
+elasticsearch:
+  servers:
+    <% node['oculus']['elasticsearch']['servers'].each do |server| -%>
+     - "<%= server %>"
+    <% end -%>
+  index: "<%= node['oculus']['elasticsearch']['index'] %>"
+  timeout: <%= node['oculus']['elasticsearch']['timeout'] %>
+  phrase_slop: <%= node['oculus']['elasticsearch']['phrase_slop'] %>
+  <% if node['oculus']['elasticsearch']['scorers'] -%>
+  scorers:
+    <% if node['oculus']['elasticsearch']['scorers'].include?("dtw") -%>
+    dtw:
+      radius: <%= node['oculus']['elasticsearch']['scorer']['dtw']['radius'] %>
+      scale_points: <%= node['oculus']['elasticsearch']['scorer']['dtw']['scale_points'] %>
+    <% end -%>
+    <% if node['oculus']['elasticsearch']['scorers'].include?("euclidian") -%>
+    euclidian:
+      scale_points: <%= node['oculus']['elasticsearch']['scorer']['euclidian']['scale_points'] %>
+    <% end -%>
+  <% end -%>
+skyline:
+  host: "<%= node['oculus']['skyline']['host'] %>"
+  port: <%= node['oculus']['skyline']['port'] %>
+  listener_port: <%= node['oculus']['skyline']['listener_port'] %>
+  metric_prefix: "<%= node['oculus']['skyline']['metric_prefix'] %>"
+redis:
+  host: "<%= node['oculus']['redis']['host'] %>"
+  port: <%= node['oculus']['redis']['port'] %>
