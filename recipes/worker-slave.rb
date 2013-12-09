@@ -1,1 +1,1 @@
-include_recipe "oculus::worker"
+include_recipe 'oculus::worker'

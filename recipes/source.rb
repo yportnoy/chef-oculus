@@ -1,5 +1,5 @@
 
-include_recipe "git"
+include_recipe 'git'
 
 git node['oculus']['install_dir'] do
   repository node['oculus']['source']['repo']
@@ -8,10 +8,10 @@ git node['oculus']['install_dir'] do
 end
 
 user node['oculus']['user'] do
-  comment "Oculus Service Account"
+  comment 'Oculus Service Account'
   supports :manage_home => true
   system  true
-  action  :create 
+  action  :create
 end
 
 directory node['oculus']['log_path'] do
@@ -29,8 +29,8 @@ directory node['oculus']['pid_path'] do
 end
 
 template "#{node['oculus']['install_dir']}/config/config.yml" do
-  source "config.yml.erb"
-  owner "root"
-  group "root"
+  source 'config.yml.erb'
+  owner 'root'
+  group 'root'
   mode 00644
 end
