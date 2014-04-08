@@ -27,7 +27,7 @@ default['oculus']['elasticsearch']['scorer']['dtw']['script'] = 'com.etsy.oculus
 default['oculus']['elasticsearch']['scorer']['euclidian']['scale_points'] = 5
 default['oculus']['elasticsearch']['scorer']['euclidian']['script'] = 'com.etsy.oculus.tsscorers.EuclidianScriptFactory'
 
-default['oculus']['elasticsearch']['scorers'] = %w{ dtw euclidian }
+default['oculus']['elasticsearch']['scorers'] = %w(dtw euclidian)
 
 # Elasticsearch Server Settings
 

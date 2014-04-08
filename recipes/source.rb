@@ -10,8 +10,8 @@ end
 user node['oculus']['user'] do
   comment 'Oculus Service Account'
   supports :manage_home => true
-  system  true
-  action  :create
+  system true
+  action :create
 end
 
 directory node['oculus']['log_path'] do
