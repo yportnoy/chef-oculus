@@ -4,7 +4,7 @@ maintainer_email 'bflad417@gmail.com'
 license 'Apache 2.0'
 description 'Installs/Configures oculus'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.1'
+version '0.1.2'
 recipe 'oculus', 'Default installation/configuration of almost self-contained Oculus server'
 recipe 'oculus::elasticsearch', 'Installs/configures common Elasticsearch functionality'
 recipe 'oculus::elasticsearch-a', 'Installs/configures Elasticsearch A cluster'

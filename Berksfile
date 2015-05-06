@@ -1,8 +1,8 @@
-site :opscode
+source 'https://supermarket.chef.io'
 
 metadata
 
-cookbook 'elasticsearch', github: 'elasticsearch/cookbook-elasticsearch'
+cookbook 'elasticsearch'
 cookbook 'redis', github: 'miah/chef-redis'
 
 group :integration do
